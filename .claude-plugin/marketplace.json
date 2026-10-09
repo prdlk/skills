@@ -1,0 +1,15 @@
+{
+  "name": "prdlk",
+  "description": "Skills for cross-platform agentic development.",
+  "owner": {
+    "name": "prdlk",
+    "url": "https://github.com/prdlk"
+  },
+  "plugins": [
+    {
+      "name": "skills",
+      "source": "./",
+      "description": "All prdlk skills."
+    }
+  ]
+}

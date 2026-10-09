@@ -1,0 +1,10 @@
+{
+  "name": "skills",
+  "description": "All prdlk skills.",
+  "author": {
+    "name": "prdlk",
+    "url": "https://github.com/prdlk"
+  },
+  "repository": "https://github.com/prdlk/skills",
+  "skills": "./.github/skills/"
+}
