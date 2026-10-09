@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gum"
+  short_description: "Build interactive and formatted terminal scripts with gum"
+  default_prompt: "Use $gum to write the interactive and human-facing output of this script."
