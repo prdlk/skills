@@ -41,3 +41,9 @@ npx skills add prdlk/skills -g -a opencode
 ```
 
 To add a skill, create `.github/skills/<name>/SKILL.md`. Its frontmatter `name` must match `<name>`.
+
+## Upstream sync
+
+Skills vendored from other repositories are listed in `.github/skill-sources.json` (`repo`, `path`, optional `ref` branch or tag). The `Sync skills` workflow (`.github/workflows/sync-skills.yml`) runs daily and on demand: it replaces each listed skill with the upstream copy, records the upstream `commit`, and pushes any changes to the default branch. Local edits to a listed skill are overwritten; skills absent from the manifest are left alone.
+
+Run it locally with `.github/scripts/sync-skills.sh [skill...]`.

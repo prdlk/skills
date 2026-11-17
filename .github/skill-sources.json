@@ -1,0 +1,248 @@
+{
+  "skills": {
+    "absurd": {
+      "repo": "earendil-works/absurd",
+      "path": "skills/absurd"
+    },
+    "attach-db": {
+      "repo": "duckdb/duckdb-skills",
+      "path": "skills/attach-db"
+    },
+    "blume": {
+      "repo": "haydenbleasel/blume",
+      "path": "skills/blume"
+    },
+    "blume-migrate": {
+      "repo": "haydenbleasel/blume",
+      "path": "skills/blume-migrate"
+    },
+    "blume-update-docs": {
+      "repo": "haydenbleasel/blume",
+      "path": "skills/blume-update-docs"
+    },
+    "cloudflare": {
+      "repo": "cloudflare/skills",
+      "path": "skills/cloudflare"
+    },
+    "cloudflare-email-service": {
+      "repo": "cloudflare/skills",
+      "path": "skills/cloudflare-email-service"
+    },
+    "codebase-design": {
+      "repo": "mattpocock/skills",
+      "path": "skills/engineering/codebase-design"
+    },
+    "deepinit": {
+      "repo": "Yeachan-Heo/oh-my-claudecode",
+      "path": "skills/deepinit"
+    },
+    "design-taste-frontend": {
+      "repo": "Leonxlnx/taste-skill",
+      "path": "skills/taste-skill"
+    },
+    "duckdb-docs": {
+      "repo": "duckdb/duckdb-skills",
+      "path": "skills/duckdb-docs"
+    },
+    "durable-objects": {
+      "repo": "cloudflare/skills",
+      "path": "skills/durable-objects"
+    },
+    "find-skills": {
+      "repo": "vercel-labs/skills",
+      "path": "skills/find-skills"
+    },
+    "golang-pro": {
+      "repo": "Jeffallan/claude-skills",
+      "path": "skills/golang-pro"
+    },
+    "grill-me": {
+      "repo": "mattpocock/skills",
+      "path": "skills/productivity/grill-me"
+    },
+    "grill-with-docs": {
+      "repo": "mattpocock/skills",
+      "path": "skills/engineering/grill-with-docs"
+    },
+    "grilling": {
+      "repo": "mattpocock/skills",
+      "path": "skills/productivity/grilling"
+    },
+    "gum": {
+      "repo": "hogdanish/dotfiles",
+      "path": "claude-code/skills/gum"
+    },
+    "improve-codebase-architecture": {
+      "repo": "mattpocock/skills",
+      "path": "skills/engineering/improve-codebase-architecture"
+    },
+    "interface-design": {
+      "repo": "Dammyjay93/interface-design",
+      "path": ".claude/skills/interface-design"
+    },
+    "mise-expert": {
+      "repo": "samhvw8/dot-claude",
+      "path": "skills/mise-expert"
+    },
+    "no-ai-slop": {
+      "repo": "petergyang/no-ai-slop",
+      "path": "skills/no-ai-slop"
+    },
+    "obscura": {
+      "repo": "h4ckf0r0day/obscura",
+      "path": "skills/obscura"
+    },
+    "openlogs-server-logs": {
+      "repo": "charlietlamb/openlogs",
+      "path": "skills/openlogs-server-logs"
+    },
+    "prototype": {
+      "repo": "mattpocock/skills",
+      "path": "skills/engineering/prototype"
+    },
+    "query": {
+      "repo": "duckdb/duckdb-skills",
+      "path": "skills/query"
+    },
+    "react": {
+      "repo": "vercel-labs/json-render",
+      "path": "skills/react"
+    },
+    "react-email": {
+      "repo": "vercel-labs/json-render",
+      "path": "skills/react-email"
+    },
+    "remotion-best-practices": {
+      "repo": "remotion-dev/remotion",
+      "path": "packages/skills/skills/remotion-best-practices"
+    },
+    "remotion-captions": {
+      "repo": "remotion-dev/remotion",
+      "path": "packages/skills/skills/remotion-captions"
+    },
+    "remotion-create": {
+      "repo": "remotion-dev/remotion",
+      "path": "packages/skills/skills/remotion-create"
+    },
+    "remotion-docs": {
+      "repo": "remotion-dev/remotion",
+      "path": "packages/skills/skills/remotion-docs"
+    },
+    "remotion-interactivity": {
+      "repo": "remotion-dev/remotion",
+      "path": "packages/skills/skills/remotion-interactivity"
+    },
+    "remotion-maps": {
+      "repo": "remotion-dev/remotion",
+      "path": "packages/skills/skills/remotion-maps"
+    },
+    "remotion-markup": {
+      "repo": "remotion-dev/remotion",
+      "path": "packages/skills/skills/remotion-markup"
+    },
+    "remotion-multimedia": {
+      "repo": "remotion-dev/remotion",
+      "path": "packages/skills/skills/remotion-multimedia"
+    },
+    "remotion-render": {
+      "repo": "remotion-dev/remotion",
+      "path": "packages/skills/skills/remotion-render"
+    },
+    "remotion-saas": {
+      "repo": "remotion-dev/remotion",
+      "path": "packages/skills/skills/remotion-saas"
+    },
+    "remotion-studio": {
+      "repo": "remotion-dev/remotion",
+      "path": "packages/skills/skills/remotion-studio"
+    },
+    "remotion-upgrade": {
+      "repo": "remotion-dev/remotion",
+      "path": "packages/skills/skills/remotion-upgrade"
+    },
+    "rust-async-patterns": {
+      "repo": "wshobson/agents",
+      "path": "plugins/systems-programming/skills/rust-async-patterns"
+    },
+    "rust-best-practices": {
+      "repo": "apollographql/skills",
+      "path": "skills/rust-best-practices"
+    },
+    "rust-skills": {
+      "repo": "leonardomso/rust-skills",
+      "path": "."
+    },
+    "rust-testing": {
+      "repo": "affaan-m/ECC",
+      "path": "skills/rust-testing"
+    },
+    "setup-matt-pocock-skills": {
+      "repo": "mattpocock/skills",
+      "path": "skills/engineering/setup-matt-pocock-skills"
+    },
+    "shadcn": {
+      "repo": "shadcn-ui/ui",
+      "path": "skills/shadcn"
+    },
+    "stop-slop": {
+      "repo": "hardikpandya/stop-slop",
+      "path": "."
+    },
+    "tanstack-form": {
+      "repo": "tanstack-skills/tanstack-skills",
+      "path": "plugins/tanstack-form/skills/tanstack-form"
+    },
+    "tanstack-integration-best-practices": {
+      "repo": "DeckardGer/tanstack-agent-skills",
+      "path": "skills/tanstack-integration"
+    },
+    "tanstack-query-best-practices": {
+      "repo": "DeckardGer/tanstack-agent-skills",
+      "path": "skills/tanstack-query"
+    },
+    "tanstack-router-best-practices": {
+      "repo": "DeckardGer/tanstack-agent-skills",
+      "path": "skills/tanstack-router"
+    },
+    "tanstack-start-best-practices": {
+      "repo": "DeckardGer/tanstack-agent-skills",
+      "path": "skills/tanstack-start"
+    },
+    "tanstack-table": {
+      "repo": "tanstack-skills/tanstack-skills",
+      "path": "plugins/tanstack-table/skills/tanstack-table"
+    },
+    "tdd": {
+      "repo": "mattpocock/skills",
+      "path": "skills/engineering/tdd"
+    },
+    "typescript-expert": {
+      "repo": "remix-run/remix",
+      "path": ".agents/skills/typescript-expert"
+    },
+    "ui-ux-pro-max": {
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "path": ".claude/skills/ui-ux-pro-max"
+    },
+    "uv-package-manager": {
+      "repo": "wshobson/agents",
+      "path": "plugins/python-development/skills/uv-package-manager"
+    },
+    "web-design-guidelines": {
+      "repo": "vercel-labs/agent-skills",
+      "path": "skills/web-design-guidelines"
+    },
+    "web-perf": {
+      "repo": "cloudflare/skills",
+      "path": "skills/web-perf"
+    },
+    "workers-best-practices": {
+      "repo": "cloudflare/skills",
+      "path": "skills/workers-best-practices"
+    },
+    "wrangler": {
+      "repo": "cloudflare/skills",
+      "path": "skills/wrangler"
+    }
+  }
+}

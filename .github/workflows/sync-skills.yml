@@ -1,0 +1,48 @@
+name: Sync skills
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+    inputs:
+      skills:
+        description: Space-separated skill names to sync (empty syncs every skill in .github/skill-sources.json)
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-skills
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Fetch upstream skills
+        env:
+          SKILLS: ${{ inputs.skills }}
+        run: |
+          read -ra skills <<<"$SKILLS"
+          .github/scripts/sync-skills.sh "${skills[@]}"
+
+      # Runs after a partial failure too, so skills that did sync still land.
+      - name: Commit and push
+        if: ${{ !cancelled() }}
+        run: |
+          git add -A .github/skills .github/skill-sources.json
+          if git diff --cached --quiet; then
+            echo "Skills are up to date."
+            exit 0
+          fi
+          body=$(git diff --cached --name-only -- .github/skills | cut -d/ -f3 | sort -u |
+            jq -Rr --slurpfile m .github/skill-sources.json '
+              . as $n | $m[0].skills[$n] | select(.) | "- \($n): \(.repo)@\(.commit[:12])"')
+          git -c user.name="github-actions[bot]" \
+            -c user.email="41898299+github-actions[bot]@users.noreply.github.com" \
+            commit --quiet -m "chore(skills): sync upstream skills" -m "$body"
+          git push
