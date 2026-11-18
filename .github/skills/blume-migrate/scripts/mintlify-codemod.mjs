@@ -4,8 +4,9 @@
 // `.md`/`.mdx` files; the body is never touched. Two passes:
 //
 //   1. Icons  — remap Mintlify (FontAwesome) `icon:` names to their closest
-//               Lucide equivalent (Blume is Lucide-only). Brand/no-equivalent
-//               icons are dropped and reported, never faked.
+//               Lucide equivalent (Blume is Lucide-only). Icons with no
+//               equivalent (most brand marks) are dropped and reported, never
+//               faked.
 //   2. Fields — drop frontmatter keys Blume's strict schema rejects, and rename
 //               Mintlify-only keys to their Blume nesting (sidebarTitle →
 //               sidebar.label, tag → sidebar.badge, canonical → seo.canonical,
@@ -39,9 +40,12 @@ import path from "node:path";
 // Keys are lowercased Mintlify icon names; values are Lucide names. A value of
 // `null` means "no Lucide equivalent" (brand icons, mostly) — the icon line is
 // removed and reported. Every value that is itself a key maps to the same name,
-// which keeps the pass idempotent (a second run finds nothing to change). The
-// FontAwesome `x` (close) maps to Lucide `x`; the X/Twitter brand is
-// `x-twitter` and has no Lucide form.
+// which keeps the pass idempotent (a second run finds nothing to change). Lucide
+// still ships a few brand marks (facebook, github, gitlab, instagram, linkedin,
+// slack, twitter, youtube) that Blume's bundled set renders, so those map to
+// themselves. FontAwesome's `apple` is the Apple logo and Lucide's is the
+// fruit, so it has no equivalent. The FontAwesome `x` (close) maps to Lucide
+// `x`; the X/Twitter brand is `x-twitter` and has no Lucide form.
 const ICONS = {
   angular: null,
   apple: null,
@@ -74,7 +78,7 @@ const ICONS = {
   docker: null,
   download: "download",
   envelope: "mail",
-  facebook: null,
+  facebook: "facebook",
   "file-lines": "file-text",
   filter: "filter",
   flask: "flask-conical",
@@ -82,14 +86,14 @@ const ICONS = {
   gauge: "gauge",
   "gauge-high": "gauge",
   gear: "settings",
-  github: null,
-  gitlab: null,
+  github: "github",
+  gitlab: "gitlab",
   globe: "globe",
   google: null,
   heart: "heart",
   house: "house",
   info: "info",
-  instagram: null,
+  instagram: "instagram",
   java: null,
   js: null,
   key: "key",
@@ -97,7 +101,7 @@ const ICONS = {
   layers: "layers",
   "life-ring": "life-buoy",
   link: "link",
-  linkedin: null,
+  linkedin: "linkedin",
   "location-dot": "map-pin",
   lock: "lock",
   magic: "sparkles",
@@ -127,7 +131,7 @@ const ICONS = {
   shield: "shield",
   "shield-halved": "shield",
   sitemap: "network",
-  slack: null,
+  slack: "slack",
   sparkles: "sparkles",
   star: "star",
   stripe: null,
@@ -138,7 +142,7 @@ const ICONS = {
   toolbox: "wrench",
   "trash-can": "trash-2",
   "triangle-exclamation": "triangle-alert",
-  twitter: null,
+  twitter: "twitter",
   upload: "upload",
   user: "user",
   users: "users",
@@ -150,7 +154,7 @@ const ICONS = {
   x: "x",
   "x-twitter": null,
   xmark: "x",
-  youtube: null,
+  youtube: "youtube",
   zap: "zap",
 };
 

@@ -1,48 +1,77 @@
 ---
 name: remotion-interactivity
-description: Structure Remotion markup for interactivity
-version: 4.0.530
+description: Structures Remotion markup so layers, timing and styles are editable in Remotion Studio. Use when writing a new composition or restructuring existing markup.
+version: 4.0.545
 ---
 
-By writing Remotion markup in a specific way, the Remotion Studio is able to recognize the structure of the code and makes it interactive:
+Make markup editable in Studio by default. Keep a part programmatic only if it is
+generated from external data or computed per frame, and tell the user it won't be
+editable. Text you write yourself is not external data.
 
-- Allowing items to be selected by clicking on them
-- Allowing drag+drop, resizing and rotation
-- Editing the CSS styles
-- Making keyframes and easing values editable
+Studio edits the JSX nodes that create timeline items. Structure the code around
+what the user should be able to select, move, trim, or style independently.
+Keep editable values inline on each instance.
 
-If the markup is too complex for the Studio to make it interactive, then the values become grayed out.
+Before writing a scene or refactoring its layers, read
+[editable timeline structure](timeline-structure.md). It covers editing units,
+tracks, shared timing, plain layout containers, and a complete component-to-root
+example. For a timeline built from footage, also read
+[editable video timelines](../remotion-markup/video-editing.md).
 
-## Give every independently editable item its own JSX node
+Use [connected compositions](../remotion-markup/connected-compositions.md) when
+a scene or reusable group needs its own timeline. Validate both its standalone
+view and the full parent timeline; a connection alone does not guarantee fewer
+visible rows.
 
-The Studio edits the JSX source node that created an item. If multiple runtime
-items come from the same JSX node, they share one source-editing target.
+## Choose schema fields
 
-For every composition registration, clip, scene, layer or sequence that should
-be editable on its own, write a separate JSX node and keep its editable props
-on that node. This applies to `<Composition>`, `<Still>`, built-in media
-components, `<Sequence>`, `<Series.Sequence>`, `<TransitionSeries.Sequence>`
-and custom components.
+Each key in the schema is a prop that Studio can read and edit at the call site.
+Props that are not in the schema still work, but are not editable in Studio.
+Keys may use dot notation, such as `style.color`.
 
-For example, author an editable timeline like this:
+| Type                                                                         | Use for                                                      | Keyframable   |
+| ---------------------------------------------------------------------------- | ------------------------------------------------------------ | ------------- |
+| `string`                                                                     | Strings, such as a title, prompt, or code snippet            | No            |
+| `number`                                                                     | Numbers, with optional `min`, `max`, `step`, `integer`       | Yes           |
+| `boolean`                                                                    | On/off switches                                              | Yes (hold)    |
+| `color`                                                                      | CSS color strings                                            | Yes           |
+| `enum`                                                                       | A choice between `variants`, each with its own nested schema | Opt-in (hold) |
+| `array`                                                                      | Lists of numbers, colors, enums and more                     | No            |
+| `asset`                                                                      | Media sources, with optional `assetType`                     | No            |
+| `font-family`                                                                | CSS font family                                              | No            |
+| `font-weight`                                                                | Font weight                                                  | Yes           |
+| `translate`, `scale`, `rotation-css`, `rotation-degrees`, `transform-origin` | Transforms                                                   | Yes           |
+| `uv-coordinate`                                                              | A normalized `[x, y]` point on the element                   | Yes           |
+| `svg-path`                                                                   | SVG path data                                                | Yes           |
+| `remotion-captions`                                                          | `Caption[]` data                                             | No            |
+| `hidden`                                                                     | A value kept out of the controls                             | —             |
 
-```tsx title="Separate source nodes"
-<Series>
-  <Series.Sequence name="Introduction" durationInFrames={90}>
-    <Introduction />
-  </Series.Sequence>
-  <Series.Sequence name="Demo" durationInFrames={150}>
-    <Demo />
-  </Series.Sequence>
-</Series>
+Every field needs a `default` and should have a `description`, which Studio shows as the label.
+Set `keyframable: false` to show a static control.
+
+Expose content and per-instance appearance, such as the text and an accent color.
+Do not add fields for `style.translate`, `style.scale`, `style.rotate`, `style.transformOrigin` and `style.opacity`: `Interactive.create()` adds them automatically.
+
+To make CSS properties of the root editable per instance, spread the built-in schema fragments:
+
+```tsx
+const cardSchema = {
+  ...Interactive.textSchema, // style.color, style.fontSize, style.fontWeight, ...
+  ...Interactive.backgroundSchema, // style.backgroundColor
+  ...Interactive.borderRadiusSchema, // style.borderRadius, ...
+} as const satisfies InteractivitySchema;
 ```
 
-A `.map()` or another programmatic loop would create multiple runtime items
-from one JSX source node. That is appropriate for repeated output that is
-intentionally controlled as one template, such as visualization bars or
-particles. It is not appropriate when the instances need independent IDs or
-names, props, metadata, timing, ordering, deletion or duplication in the
-Studio.
+Also available: `Interactive.borderSchema`, and `Interactive.captionsSchema` for components that accept captions.
+For components that accept `React.ReactNode` children, add `...Interactive.childrenSchema`.
+It provides controls for children content and may evolve to support richer content.
+Currently, it uses a string field labeled "Text" with a default of `''`.
+If a component requires string-only children, declare an explicit `children` field with `type: 'string'` instead.
+`Interactive.textSchema` controls typography styles; `childrenSchema` controls content.
+The children fragment is not included in `baseSchema` or automatically added to custom components.
+Nested markup and computed children are currently read-only.
+`text-content` is a deprecated alias for the `string` field type.
+See [`InteractivitySchema`](https://www.remotion.dev/docs/interactivity-schema) for all options.
 
 ## Make an HTML element interactive using `Interactive`
 
@@ -57,7 +86,9 @@ Every HTML and SVG element (except `<Img>`, it already is interactive) such as `
 </Interactive.Div>
 ```
 
-This allows styles and keyframes to be set in the Studio. Be sensible, if a component has many elements, the timeline might get messy.
+Use this for text or graphics that need independent controls. Keep layout-only
+containers and decorative internals as plain HTML; an interactive component
+already provides controls for its root.
 
 ## Prefer inline text
 
@@ -84,9 +115,9 @@ Avoid computed names, hardcode them.
   </Interactive.Div>
   <Img name="Avatar" src="https://remotion.media/image.jpeg" />
   <Video name="Background" src="https://remotion.media/video.mp4" />
-  <Sequence name="Title">
+  <Interactive.Div name="Title">
     Launch day
-  </Sequence>
+  </Interactive.Div>
 </>
 ```
 
@@ -156,7 +187,6 @@ const {fps, durationInFrames} = useVideoConfig();
       ['0px 0px', '0px 120px'],
       {
         easing: Easing.spring({damping: 200}),
-        output: 'perceptual-scale',
         extrapolateLeft: 'clamp',
         extrapolateRight: 'clamp'
       }
@@ -185,7 +215,10 @@ Use `<Interactive.Path>` from `remotion` instead of `<path>` inside an SVG to ma
 Install `@remotion/paths` for path interpolation and Studio path keyframes:
 
 ```sh
-bunx remotion add @remotion/paths
+npx remotion add @remotion/paths # If project uses npm
+bunx remotion add @remotion/paths # If project uses bun
+yarn remotion add @remotion/paths # If project uses yarn
+pnpm exec remotion add @remotion/paths # If project uses pnpm
 ```
 
 If the geometry is meant to be static, put the path string directly in the `d` prop. Do not extract it into a constant.
@@ -256,11 +289,14 @@ When scaffolding a composition, use a JSX string literal for `id`, keep `width`,
 The Props editor can save visual edits back to your code when `defaultProps` is an inline object literal on `<Composition>` or `<Still>`.
 
 ```tsx
+import {Composition, type CalculateMetadataFunction} from 'remotion';
+import {MyComponent, type Props} from './MyComponent';
+
 // 👍 Static values are in <Composition>, dynamic values are in calculateMetadata()
-const calculateMetadata = useMemo(async () => {
+const calculateMetadata: CalculateMetadataFunction<Props> = async () => {
   const dimensions = await getDimensions(); // just an example
   return {width: dimensions.width, height: dimensions.height};
-});
+};
 
 <Composition
   id="my-video"
@@ -274,10 +310,10 @@ const calculateMetadata = useMemo(async () => {
 
 ```tsx title="Negative examples"
 const defaultProps = {title: 'Hello', color: '#0b84ff'}; // ❌ Don't extract defaultProps, must be inline
-const calculateMetadata = useMemo(() => {
+const calculateMetadata: CalculateMetadataFunction<Props> = () => {
   // ❌ Unnecessary because no calculation is being done,
   return {durationInFrames: 150, fps: 30, width: 1920, height: 1080};
-});
+};
 
 <Composition
   id="my-video"
@@ -293,46 +329,7 @@ Use only `calculateMetadata()` for the part of the metadata that is dynamic.
 
 ## Effects should be inline too
 
-The effects array should not be computed.  
-The same rules for setting keyframes as `interpolate()` apply too here: All values should also be hardcoded: Input range, output range, easing, extrapolation, `output` property.
-
-```tsx title="Effects"
-// 👍 Parameters are inline and the array shape is stable
-<CanvasImage
-  src={src}
-  width={1280}
-  height={720}
-  effects={[
-    radialProgressiveBlur({
-      center: [0.5, 0.5],
-      width: 1.2,
-      height: 0.8,
-      start: 0.2,
-      disabled: true,
-      rotation: interpolate(frame, [0, 120], [0, 180]),
-    }),
-  ]}
-/>
-
-const center = [0.5, 0.5] as const;
-const rotation = frame * 1.5;
-
-<CanvasImage
-  src={src}
-  width={1280}
-  height={720}
-  // ❌ Conditional effect is not animateable
-  effects={enabled ? [
-    radialProgressiveBlur({
-      // ❌ Not inline
-      center,
-      rotation,
-    }),
-  ] : []}
-/>
-```
-
-Render separate elements if one version should have effects and another should not.
+Keep effect arrays and parameters inline so their shape and keyframes remain editable. See [Inline effects](./inline-effects.md) for examples.
 
 ## Making your own component interactive
 
@@ -341,4 +338,4 @@ To make a custom userland component interactive, use:
 
 ## Video editing
 
-If a Remotion component mainly consists of video and audio clips, see Video editing for best practices on how to structure Remotion markup so the clips are interactively editable in the timeline.
+If a Remotion component mainly consists of video and audio clips, see [Video editing](../remotion-markup/video-editing.md) for best practices on how to structure Remotion markup so the clips are interactively editable in the timeline.

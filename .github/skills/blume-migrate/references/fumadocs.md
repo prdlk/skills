@@ -66,7 +66,7 @@ Fumadocs icons are strings resolved by the repo's own `icon` handler in `loader(
 
 ## Components
 
-- **Callouts:** `<Callout type="x">` → `:::` directive. Fumadocs types are `info` (the default), `warn`, `warning`, `error`, `success`, `idea`: `warn`/`warning`→`:::warning`, `error`→`:::danger`, `success`→`:::success`, `idea`→`:::tip`, `info` and **bare `<Callout>`** → `:::info`. `title` → `:::type[Title]`; drop `icon`.
+- **Callouts:** `<Callout type="x">` → `:::` directive. Fumadocs types are `info` (the default), `warn`, `warning`, `error`, `success`, `idea`: `warn`/`warning`→`:::warning`, `error`→`:::danger`, `success`→`:::success`, `idea`→`:::tip`, `info` and **bare `<Callout>`** → `:::info`. `title` → `:::type[Title]`. An `icon` (a JSX element there) needs a `<Callout type="…" title="…" icon="cpu">` with its kebab-case Lucide name, since a directive can't set one; drop it if it only restated the type's icon.
 - **Cards:** `<Cards>` → `<CardGroup>`. `<Card>` needs **prop surgery**, not pass-through: Fumadocs `icon` is a JSX element (`icon={<Cpu />}` imported from `lucide-react`) → Blume takes a string name (`icon="cpu"`); Fumadocs `description="…"` → Blume has no `description` prop — move the text into the card body.
 - **Accordions (container/item inversion):** `<Accordions>` → `<Accordion>` (container); `<Accordion>` → `<AccordionItem>` (item).
 - **File trees:** `<Files>` → **`<Tree>`** (the JSX container for `Tree.*` children — _not_ `<FileTree>`, which wraps a Markdown list); `<Folder>` → `<Tree.Folder>` (`defaultOpen` carries over); `<File>` → `<Tree.File>`. Or convert the whole block to a list-driven `<FileTree>`.

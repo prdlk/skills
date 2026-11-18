@@ -2,247 +2,308 @@
   "skills": {
     "absurd": {
       "repo": "earendil-works/absurd",
-      "path": "skills/absurd"
+      "path": "skills/absurd",
+      "commit": "eb362734b02e51a167a3cb0b5b306424f74406b2"
     },
     "attach-db": {
       "repo": "duckdb/duckdb-skills",
-      "path": "skills/attach-db"
+      "path": "skills/attach-db",
+      "commit": "44dfbbb414e54187964a2212eae28495f6ae21d9"
     },
     "blume": {
       "repo": "haydenbleasel/blume",
-      "path": "skills/blume"
+      "path": "skills/blume",
+      "commit": "da14fd13bae17ea7935cd842b8637a6e763ee34b"
     },
     "blume-migrate": {
       "repo": "haydenbleasel/blume",
-      "path": "skills/blume-migrate"
+      "path": "skills/blume-migrate",
+      "commit": "da14fd13bae17ea7935cd842b8637a6e763ee34b"
     },
     "blume-update-docs": {
       "repo": "haydenbleasel/blume",
-      "path": "skills/blume-update-docs"
+      "path": "skills/blume-update-docs",
+      "commit": "da14fd13bae17ea7935cd842b8637a6e763ee34b"
     },
     "cloudflare": {
       "repo": "cloudflare/skills",
-      "path": "skills/cloudflare"
+      "path": "skills/cloudflare",
+      "commit": "5108325ecceabc899c761e07aa617b09c02445ee"
     },
     "cloudflare-email-service": {
       "repo": "cloudflare/skills",
-      "path": "skills/cloudflare-email-service"
+      "path": "skills/cloudflare-email-service",
+      "commit": "5108325ecceabc899c761e07aa617b09c02445ee"
     },
     "codebase-design": {
       "repo": "mattpocock/skills",
-      "path": "skills/engineering/codebase-design"
+      "path": "skills/engineering/codebase-design",
+      "commit": "5863806dd4e15c63174bee4e7515a4256792ecfa"
     },
     "deepinit": {
       "repo": "Yeachan-Heo/oh-my-claudecode",
-      "path": "skills/deepinit"
+      "path": "skills/deepinit",
+      "commit": "dec7e4188c0e3de6b92fb3d734ee5c95326021ed"
     },
     "design-taste-frontend": {
       "repo": "Leonxlnx/taste-skill",
-      "path": "skills/taste-skill"
+      "path": "skills/taste-skill",
+      "commit": "f6b76575f949707b4e3c37cd86cb44b0b98643e8"
     },
     "duckdb-docs": {
       "repo": "duckdb/duckdb-skills",
-      "path": "skills/duckdb-docs"
+      "path": "skills/duckdb-docs",
+      "commit": "44dfbbb414e54187964a2212eae28495f6ae21d9"
     },
     "durable-objects": {
       "repo": "cloudflare/skills",
-      "path": "skills/durable-objects"
+      "path": "skills/durable-objects",
+      "commit": "5108325ecceabc899c761e07aa617b09c02445ee"
     },
     "find-skills": {
       "repo": "vercel-labs/skills",
-      "path": "skills/find-skills"
+      "path": "skills/find-skills",
+      "commit": "57217cf86ba38148a57af9e90d14a4c049558330"
     },
     "golang-pro": {
       "repo": "Jeffallan/claude-skills",
-      "path": "skills/golang-pro"
+      "path": "skills/golang-pro",
+      "commit": "67c1961b180dc92cf08983344627109e983e8f51"
     },
     "grill-me": {
       "repo": "mattpocock/skills",
-      "path": "skills/productivity/grill-me"
+      "path": "skills/productivity/grill-me",
+      "commit": "5863806dd4e15c63174bee4e7515a4256792ecfa"
     },
     "grill-with-docs": {
       "repo": "mattpocock/skills",
-      "path": "skills/engineering/grill-with-docs"
+      "path": "skills/engineering/grill-with-docs",
+      "commit": "5863806dd4e15c63174bee4e7515a4256792ecfa"
     },
     "grilling": {
       "repo": "mattpocock/skills",
-      "path": "skills/productivity/grilling"
+      "path": "skills/productivity/grilling",
+      "commit": "5863806dd4e15c63174bee4e7515a4256792ecfa"
     },
     "gum": {
       "repo": "hogdanish/dotfiles",
-      "path": "claude-code/skills/gum"
+      "path": "claude-code/skills/gum",
+      "commit": "9048f07906aaccbdf69e80d3973d1e75d1eea794"
     },
     "improve-codebase-architecture": {
       "repo": "mattpocock/skills",
-      "path": "skills/engineering/improve-codebase-architecture"
+      "path": "skills/engineering/improve-codebase-architecture",
+      "commit": "5863806dd4e15c63174bee4e7515a4256792ecfa"
     },
     "interface-design": {
       "repo": "Dammyjay93/interface-design",
-      "path": ".claude/skills/interface-design"
+      "path": ".claude/skills/interface-design",
+      "commit": "2f9be3206855bcb2d1d0af262c8bae25cba6658d"
     },
     "mise-expert": {
       "repo": "samhvw8/dot-claude",
-      "path": "skills/mise-expert"
+      "path": "skills/mise-expert",
+      "commit": "28c76162116d2eedab131c0e1548fdc76a2999f7"
     },
     "no-ai-slop": {
       "repo": "petergyang/no-ai-slop",
-      "path": "skills/no-ai-slop"
+      "path": "skills/no-ai-slop",
+      "commit": "000650b156983f5159695b441477f4e63b25dc85"
     },
     "obscura": {
       "repo": "h4ckf0r0day/obscura",
-      "path": "skills/obscura"
+      "path": "skills/obscura",
+      "commit": "4eb123528b40c25ee015ed53b4ebdad4b9069898"
     },
     "openlogs-server-logs": {
       "repo": "charlietlamb/openlogs",
-      "path": "skills/openlogs-server-logs"
+      "path": "skills/openlogs-server-logs",
+      "commit": "5ae124fd8cd337d7a908246d316912a6a03dc86b"
     },
     "prototype": {
       "repo": "mattpocock/skills",
-      "path": "skills/engineering/prototype"
+      "path": "skills/engineering/prototype",
+      "commit": "5863806dd4e15c63174bee4e7515a4256792ecfa"
     },
     "query": {
       "repo": "duckdb/duckdb-skills",
-      "path": "skills/query"
+      "path": "skills/query",
+      "commit": "44dfbbb414e54187964a2212eae28495f6ae21d9"
     },
     "react": {
       "repo": "vercel-labs/json-render",
-      "path": "skills/react"
+      "path": "skills/react",
+      "commit": "9301e64eb556f972c21eb471ae851603cab65e6b"
     },
     "react-email": {
       "repo": "vercel-labs/json-render",
-      "path": "skills/react-email"
+      "path": "skills/react-email",
+      "commit": "9301e64eb556f972c21eb471ae851603cab65e6b"
     },
     "remotion-best-practices": {
       "repo": "remotion-dev/remotion",
-      "path": "packages/skills/skills/remotion-best-practices"
+      "path": "packages/skills/skills/remotion-best-practices",
+      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
     },
     "remotion-captions": {
       "repo": "remotion-dev/remotion",
-      "path": "packages/skills/skills/remotion-captions"
+      "path": "packages/skills/skills/remotion-captions",
+      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
     },
     "remotion-create": {
       "repo": "remotion-dev/remotion",
-      "path": "packages/skills/skills/remotion-create"
+      "path": "packages/skills/skills/remotion-create",
+      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
     },
     "remotion-docs": {
       "repo": "remotion-dev/remotion",
-      "path": "packages/skills/skills/remotion-docs"
+      "path": "packages/skills/skills/remotion-docs",
+      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
     },
     "remotion-interactivity": {
       "repo": "remotion-dev/remotion",
-      "path": "packages/skills/skills/remotion-interactivity"
+      "path": "packages/skills/skills/remotion-interactivity",
+      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
     },
     "remotion-maps": {
       "repo": "remotion-dev/remotion",
-      "path": "packages/skills/skills/remotion-maps"
+      "path": "packages/skills/skills/remotion-maps",
+      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
     },
     "remotion-markup": {
       "repo": "remotion-dev/remotion",
-      "path": "packages/skills/skills/remotion-markup"
+      "path": "packages/skills/skills/remotion-markup",
+      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
     },
     "remotion-multimedia": {
       "repo": "remotion-dev/remotion",
-      "path": "packages/skills/skills/remotion-multimedia"
+      "path": "packages/skills/skills/remotion-multimedia",
+      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
     },
     "remotion-render": {
       "repo": "remotion-dev/remotion",
-      "path": "packages/skills/skills/remotion-render"
+      "path": "packages/skills/skills/remotion-render",
+      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
     },
     "remotion-saas": {
       "repo": "remotion-dev/remotion",
-      "path": "packages/skills/skills/remotion-saas"
+      "path": "packages/skills/skills/remotion-saas",
+      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
     },
     "remotion-studio": {
       "repo": "remotion-dev/remotion",
-      "path": "packages/skills/skills/remotion-studio"
+      "path": "packages/skills/skills/remotion-studio",
+      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
     },
     "remotion-upgrade": {
       "repo": "remotion-dev/remotion",
-      "path": "packages/skills/skills/remotion-upgrade"
+      "path": "packages/skills/skills/remotion-upgrade",
+      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
     },
     "rust-async-patterns": {
       "repo": "wshobson/agents",
-      "path": "plugins/systems-programming/skills/rust-async-patterns"
+      "path": "plugins/systems-programming/skills/rust-async-patterns",
+      "commit": "42203085cfc5736204bf0f6d436dff7e1da0bf3f"
     },
     "rust-best-practices": {
       "repo": "apollographql/skills",
-      "path": "skills/rust-best-practices"
+      "path": "skills/rust-best-practices",
+      "commit": "9dda1397730370aeb8df4ff8f2015c34c86b5003"
     },
     "rust-skills": {
       "repo": "leonardomso/rust-skills",
-      "path": "."
+      "path": ".",
+      "commit": "fd2a861ab0406a4ac536a55274d14ea6fd1ca9c9"
     },
     "rust-testing": {
       "repo": "affaan-m/ECC",
-      "path": "skills/rust-testing"
+      "path": "skills/rust-testing",
+      "commit": "3f14a103a8694e51c1df9a806217a6d0b5f7a6f7"
     },
     "setup-matt-pocock-skills": {
       "repo": "mattpocock/skills",
-      "path": "skills/engineering/setup-matt-pocock-skills"
+      "path": "skills/engineering/setup-matt-pocock-skills",
+      "commit": "5863806dd4e15c63174bee4e7515a4256792ecfa"
     },
     "shadcn": {
       "repo": "shadcn-ui/ui",
-      "path": "skills/shadcn"
+      "path": "skills/shadcn",
+      "commit": "968d8cb9dc42ae5d52e8fd356cf84596ec832a26"
     },
     "stop-slop": {
       "repo": "hardikpandya/stop-slop",
-      "path": "."
+      "path": ".",
+      "commit": "8da1f030185bdfe8471220585162991eaeb970e9"
     },
     "tanstack-form": {
       "repo": "tanstack-skills/tanstack-skills",
-      "path": "plugins/tanstack-form/skills/tanstack-form"
+      "path": "plugins/tanstack-form/skills/tanstack-form",
+      "commit": "6f5521ecbdfbfa3d54d335eba6c8b4df0b804c03"
     },
     "tanstack-integration-best-practices": {
       "repo": "DeckardGer/tanstack-agent-skills",
-      "path": "skills/tanstack-integration"
+      "path": "skills/tanstack-integration",
+      "commit": "b2fc14c974b2ca09b38de09c28237f240175205b"
     },
     "tanstack-query-best-practices": {
       "repo": "DeckardGer/tanstack-agent-skills",
-      "path": "skills/tanstack-query"
+      "path": "skills/tanstack-query",
+      "commit": "b2fc14c974b2ca09b38de09c28237f240175205b"
     },
     "tanstack-router-best-practices": {
       "repo": "DeckardGer/tanstack-agent-skills",
-      "path": "skills/tanstack-router"
+      "path": "skills/tanstack-router",
+      "commit": "b2fc14c974b2ca09b38de09c28237f240175205b"
     },
     "tanstack-start-best-practices": {
       "repo": "DeckardGer/tanstack-agent-skills",
-      "path": "skills/tanstack-start"
+      "path": "skills/tanstack-start",
+      "commit": "b2fc14c974b2ca09b38de09c28237f240175205b"
     },
     "tanstack-table": {
       "repo": "tanstack-skills/tanstack-skills",
-      "path": "plugins/tanstack-table/skills/tanstack-table"
+      "path": "plugins/tanstack-table/skills/tanstack-table",
+      "commit": "6f5521ecbdfbfa3d54d335eba6c8b4df0b804c03"
     },
     "tdd": {
       "repo": "mattpocock/skills",
-      "path": "skills/engineering/tdd"
+      "path": "skills/engineering/tdd",
+      "commit": "5863806dd4e15c63174bee4e7515a4256792ecfa"
     },
     "typescript-expert": {
       "repo": "remix-run/remix",
-      "path": ".agents/skills/typescript-expert"
+      "path": ".agents/skills/typescript-expert",
+      "commit": "b4185ba2de72eb4062d31d2178fd7f53e07811f0"
     },
     "ui-ux-pro-max": {
       "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
-      "path": ".claude/skills/ui-ux-pro-max"
+      "path": ".claude/skills/ui-ux-pro-max",
+      "commit": "f984fcd3dec8c71cf88f2b47ff8acd0ff4ca99c2"
     },
     "uv-package-manager": {
       "repo": "wshobson/agents",
-      "path": "plugins/python-development/skills/uv-package-manager"
+      "path": "plugins/python-development/skills/uv-package-manager",
+      "commit": "42203085cfc5736204bf0f6d436dff7e1da0bf3f"
     },
     "web-design-guidelines": {
       "repo": "vercel-labs/agent-skills",
-      "path": "skills/web-design-guidelines"
+      "path": "skills/web-design-guidelines",
+      "commit": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62"
     },
     "web-perf": {
       "repo": "cloudflare/skills",
-      "path": "skills/web-perf"
+      "path": "skills/web-perf",
+      "commit": "5108325ecceabc899c761e07aa617b09c02445ee"
     },
     "workers-best-practices": {
       "repo": "cloudflare/skills",
-      "path": "skills/workers-best-practices"
+      "path": "skills/workers-best-practices",
+      "commit": "5108325ecceabc899c761e07aa617b09c02445ee"
     },
     "wrangler": {
       "repo": "cloudflare/skills",
-      "path": "skills/wrangler"
+      "path": "skills/wrangler",
+      "commit": "5108325ecceabc899c761e07aa617b09c02445ee"
     }
   }
 }

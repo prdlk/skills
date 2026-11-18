@@ -4,7 +4,8 @@ description: Implements concurrent Go patterns using goroutines and channels, de
 license: MIT
 metadata:
   author: https://github.com/Jeffallan
-  version: "1.1.0"
+  company: https://synergetic.solutions
+  version: "1.1.1"
   domain: language
   triggers: Go, Golang, goroutines, channels, gRPC, microservices Go, Go generics, concurrent programming, Go interfaces
   role: specialist
@@ -43,21 +44,19 @@ Load detailed guidance based on context:
 Goroutine with proper context cancellation and error propagation:
 
 ```go
-// worker runs until ctx is cancelled or an error occurs.
-// Errors are returned via the errCh channel; the caller must drain it.
-func worker(ctx context.Context, jobs <-chan Job, errCh chan<- error) {
+// worker runs until jobs is closed, ctx is cancelled, or a job fails.
+// It returns nil only after draining jobs cleanly.
+func worker(ctx context.Context, jobs <-chan Job) error {
     for {
         select {
         case <-ctx.Done():
-            errCh <- fmt.Errorf("worker cancelled: %w", ctx.Err())
-            return
+            return fmt.Errorf("worker cancelled: %w", ctx.Err())
         case job, ok := <-jobs:
             if !ok {
-                return // jobs channel closed; clean exit
+                return nil // jobs channel closed; clean exit
             }
             if err := process(ctx, job); err != nil {
-                errCh <- fmt.Errorf("process job %v: %w", job.ID, err)
-                return
+                return fmt.Errorf("process job %v: %w", job.ID, err)
             }
         }
     }
@@ -68,9 +67,9 @@ func runPipeline(ctx context.Context, jobs []Job) error {
     defer cancel()
 
     jobCh := make(chan Job, len(jobs))
-    errCh := make(chan error, 1)
+    errCh := make(chan error, 1) // buffered so the worker never blocks on send
 
-    go worker(ctx, jobCh, errCh)
+    go func() { errCh <- worker(ctx, jobCh) }()
 
     for _, j := range jobs {
         jobCh <- j
@@ -120,5 +119,7 @@ When implementing Go features, provide:
 ## Knowledge Reference
 
 Go 1.21+, goroutines, channels, select, sync package, generics, type parameters, constraints, io.Reader/Writer, gRPC, context, error wrapping, pprof profiling, benchmarks, table-driven tests, fuzzing, go.mod, internal packages, functional options
+
+Maintained by [@jeffallan](https://github.com/jeffallan), Principal Consultant at [Synergetic Solutions](https://synergetic.solutions)
 
 [Documentation](https://jeffallan.github.io/claude-skills/skills/language/golang-pro/)

@@ -17,7 +17,7 @@ Read the sections relevant to the task:
 | [Runtime patterns](references/runtime-patterns.md) | Streaming, promise lifetime, request state, service calls, security, and runtime tests |
 | [Platform API checks](references/platform-apis.md) | Handler signatures, platform classes, binding access, and serialization |
 
-For missing evidence, consult [Workers best practices](https://developers.cloudflare.com/workers/best-practices/workers-best-practices/) or find the affected product in the [Cloudflare docs directory](https://developers.cloudflare.com/directory/). Use the installed Wrangler schema for config fields. A newer type package does not supersede the project's configured target.
+For missing evidence, consult [Workers best practices](https://developers.cloudflare.com/workers/best-practices/workers-best-practices/index.md) or find the affected product in the [Cloudflare docs directory](https://developers.cloudflare.com/directory/index.md). Use the installed Wrangler schema for config fields. A newer type package does not supersede the project's configured target.
 
 ## Keep Compatibility Dates Current
 
@@ -25,7 +25,11 @@ Use today's date for new Workers. Encourage periodic updates for existing Worker
 
 ## Enable Observability
 
-Enable [Workers Logs](https://developers.cloudflare.com/workers/observability/logs/workers-logs/) and [Traces](https://developers.cloudflare.com/workers/observability/traces/) when creating or preparing a Worker for production. Set `observability.enabled` and `observability.traces.enabled` to `true`; the top-level setting alone does not enable traces. Use structured JSON logging and configure sampling for the workload. During reviews, flag missing logs or traces. See the [configuration example](references/configuration.md#enable-workers-logs-and-traces).
+Enable [Workers Logs](https://developers.cloudflare.com/workers/observability/logs/workers-logs/index.md) and [Traces](https://developers.cloudflare.com/workers/observability/traces/index.md) when creating or preparing a Worker for production. Set `observability.enabled` and `observability.traces.enabled` to `true`; the top-level setting alone does not enable traces. Use structured JSON logging and configure sampling for the workload. During reviews, flag missing logs or traces. See the [configuration example](references/configuration.md#enable-workers-logs-and-traces).
+
+## Place Compute Near Regional Databases
+
+For Workers that make multiple sequential queries to one regional database, configure explicit placement matching the database's provider and region before deployment. Ask for missing location information, preserve existing placement choices, and verify handler eligibility and deployed request duration. See [database placement](references/configuration.md#place-compute-near-regional-databases).
 
 ## Anti-Patterns to Flag
 
@@ -56,5 +60,9 @@ Use the project's existing checks for affected Workers behavior: type-check bind
 This skill covers Workers-specific best practices and code review. For related topics:
 
 - **Durable Objects**: load the `durable-objects` skill
-- **Workflows**: see [Rules of Workflows](https://developers.cloudflare.com/workflows/build/rules-of-workflows/)
-- **Wrangler CLI commands**: load the `wrangler` skill
+- **Workflows**: see [Rules of Workflows](https://developers.cloudflare.com/workflows/build/rules-of-workflows/index.md)
+- **CLI commands**: load the `cf-cli` skill, or the `wrangler` skill in a project with a Wrangler configuration file
+
+## Skill feedback
+
+If the user reports that this skill gave incorrect or outdated guidance, or is missing information, read [references/skill-feedback.md](references/skill-feedback.md).

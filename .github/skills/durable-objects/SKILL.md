@@ -13,11 +13,11 @@ Your knowledge of Durable Objects APIs and configuration may be outdated. **Pref
 
 | Resource | URL |
 |----------|-----|
-| Docs | https://developers.cloudflare.com/durable-objects/ |
-| API Reference | https://developers.cloudflare.com/durable-objects/api/ |
-| Best Practices | https://developers.cloudflare.com/durable-objects/best-practices/ |
-| Examples | https://developers.cloudflare.com/durable-objects/examples/ |
-| Roles and permissions | https://developers.cloudflare.com/workers/authorization/durable-objects/ |
+| Docs | https://developers.cloudflare.com/durable-objects/index.md |
+| API Reference | https://developers.cloudflare.com/durable-objects/api/index.md |
+| Best Practices | https://developers.cloudflare.com/durable-objects/best-practices/index.md |
+| Examples | https://developers.cloudflare.com/durable-objects/examples/index.md |
+| Roles and permissions | https://developers.cloudflare.com/workers/authorization/durable-objects/index.md |
 
 Fetch the relevant doc page when implementing features.
 
@@ -34,7 +34,7 @@ Fetch the relevant doc page when implementing features.
 
 - `./references/rules.md` - Core rules, storage, concurrency, RPC, alarms
 - [Testing reference](./references/testing.md) - Current Vitest documentation, migration choices, and test selection
-- `./references/workers.md` - Workers handlers, types, wrangler config, observability
+- [Workers reference](./references/workers.md) - Workers handlers, types, configuration, tracing, and local debugging
 
 Search: `blockConcurrencyWhile`, `idFromName`, `getByName`, `setAlarm`, `sql.exec`
 
@@ -122,7 +122,7 @@ export default {
 
 ## Authorization
 
-Durable Objects do not have separate roles or permissions; access follows the Worker that implements them. Retrieve the current [Durable Objects authorization guidance](https://developers.cloudflare.com/workers/authorization/durable-objects/) before granting observability or Data Studio access, and scope the Workers role to the intended Worker or Workers product.
+Durable Objects do not have separate roles or permissions; access follows the Worker that implements them. Retrieve the current [Durable Objects authorization guidance](https://developers.cloudflare.com/workers/authorization/durable-objects/index.md) before granting observability or Data Studio access, and scope the Workers role to the intended Worker or Workers product.
 
 ## Anti-Patterns (NEVER)
 
@@ -178,3 +178,7 @@ await this.ctx.storage.deleteAlarm();
 ## Testing
 
 Read the [testing reference](./references/testing.md) before configuring a suite or writing Durable Object tests. It routes to current setup, APIs, and examples and identifies the behavior to cover.
+
+## Skill feedback
+
+If the user reports that this skill gave incorrect or outdated guidance, or is missing information, read [references/skill-feedback.md](references/skill-feedback.md).

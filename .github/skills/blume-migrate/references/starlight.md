@@ -12,7 +12,7 @@ Keep content where it is — set `content.root: "src/content/docs"`.
 
 ## Config: `starlight({…})` → `blume.config.ts`
 
-**Harvest the surrounding `astro.config.*` too, not just the `starlight()` call:** top-level Astro `redirects` → Blume `redirects`; `site` → `deployment.site`, unless the target host is Vercel, Netlify, or Cloudflare Pages, which Blume auto-detects (see SKILL.md); other integrations → report.
+**Harvest the surrounding `astro.config.*` too, not just the `starlight()` call:** top-level Astro `redirects` → Blume `redirects`; `site` → `deployment.site`, unless the target host is Vercel or Netlify, which Blume auto-detects (see SKILL.md); other integrations → report.
 
 | Starlight option | Blume |
 | --- | --- |
@@ -65,7 +65,7 @@ Starlight's `sidebar` array → prefer letting Blume generate from the filesyste
 
 ## Asides → directives (and the `.md` trap)
 
-Starlight's primary callout syntax is the `:::note`/`:::tip`/`:::caution`/`:::danger` directive **in plain `.md` files**. The directive names map perfectly (Blume aliases `caution`→warning; `error`→danger) and `[Title]` syntax carries over — **but Blume only parses directives in `.mdx`**. In a `.md` file, `:::note` renders as literal text and the build stays green. So: **rename every `.md` file that contains asides (or math, or mermaid/package-install fences) to `.mdx`** — for a typical Starlight repo that's most of the content; renaming everything to `.mdx` is usually simpler and safe.
+Starlight's primary callout syntax is the `:::note`/`:::tip`/`:::caution`/`:::danger` directive **in plain `.md` files**. The directive names map perfectly (Blume aliases `caution`→warning; `error`→danger) and `[Title]` syntax carries over — **but Blume only parses directives in `.mdx`**. In a `.md` file, `:::note` renders as literal text and the build stays green, with only a `BLUME_MD_DIRECTIVE` warning at its line. So: **rename every `.md` file that contains asides (or math, or mermaid/package-install fences) to `.mdx`** — for a typical Starlight repo that's most of the content; renaming everything to `.mdx` is usually simpler and safe.
 
 - `<Aside type="…" title="…">` (the component form) → the same directives; bare `<Aside>` → `:::note`.
 - An aside custom icon (`:::tip{icon="heart"}`) → drop the attr (report).
@@ -83,7 +83,7 @@ Starlight content is full of Expressive Code fence meta; Blume understands some 
 
 - `title="file.js"` → works as-is (or use the space-title shorthand). Line ranges `{2-3}` → work as-is.
 - `ins=`/`del=` line marks → `// [!code ++]` / `// [!code --]` comments; `mark=` → `{ranges}` or `// [!code highlight]`.
-- `showLineNumbers` → `lineNumbers`.
+- `showLineNumbers` → `lineNumbers` (`BLUME_CODE_FENCE_OPTION` flags any left).
 - `wrap` / `wrap=true` → a bare `wrap` (that block's long lines wrap); a site-wide `expressiveCode.defaultProps.wrap: true` → `markdown.code.wrap: true`.
 - **Drop:** `frame="terminal"`, `collapse=`, `wrap=false`, `preserveIndent`/`hangingIndent`, `"string"` and `/regex/` text markers (report if they carried meaning).
 - ` ```diff lang="js" ` → a normal ` ```js ` fence with `[!code ++]`/`[!code --]` markers.
