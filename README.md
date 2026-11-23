@@ -44,6 +44,6 @@ To add a skill, create `.github/skills/<name>/SKILL.md`. Its frontmatter `name` 
 
 ## Upstream sync
 
-Skills vendored from other repositories are listed in `.github/skill-sources.json` (`repo`, `path`, optional `ref` branch or tag). The `Sync skills` workflow (`.github/workflows/sync-skills.yml`) runs every Monday, Wednesday, and Friday at 06:17 UTC and on demand: it replaces each listed skill with the upstream copy, records the upstream `commit`, and pushes any changes to the default branch. Local edits to a listed skill are overwritten; skills absent from the manifest are left alone.
+Skills vendored from other repositories are listed in `.github/skill-sources.json` (`repo`, `path`, optional `ref` branch, tag, or full commit SHA; pin to a tag or commit when upstream has removed the skill from its default branch). The `Sync skills` workflow (`.github/workflows/sync-skills.yml`) runs every Monday, Wednesday, and Friday at 06:17 UTC and on demand: it replaces each listed skill with the upstream copy, records the upstream `commit`, and pushes any changes to the default branch. Local edits to a listed skill are overwritten; skills absent from the manifest are left alone.
 
 Run it locally with `.github/scripts/sync-skills.sh [skill...]`.
