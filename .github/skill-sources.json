@@ -178,62 +178,62 @@
     "remotion-best-practices": {
       "repo": "remotion-dev/remotion",
       "path": "packages/skills/skills/remotion-best-practices",
-      "commit": "973ab90b07b12c33633a9316800370eb6060d7c6"
+      "commit": "0e4c50cc93265b92eaaa40892c86b19c9fc07a0f"
     },
     "remotion-captions": {
       "repo": "remotion-dev/remotion",
       "path": "packages/skills/skills/remotion-captions",
-      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
+      "commit": "0e4c50cc93265b92eaaa40892c86b19c9fc07a0f"
     },
     "remotion-create": {
       "repo": "remotion-dev/remotion",
       "path": "packages/skills/skills/remotion-create",
-      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
+      "commit": "0e4c50cc93265b92eaaa40892c86b19c9fc07a0f"
     },
     "remotion-docs": {
       "repo": "remotion-dev/remotion",
       "path": "packages/skills/skills/remotion-docs",
-      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
+      "commit": "0e4c50cc93265b92eaaa40892c86b19c9fc07a0f"
     },
     "remotion-interactivity": {
       "repo": "remotion-dev/remotion",
       "path": "packages/skills/skills/remotion-interactivity",
-      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
+      "commit": "0e4c50cc93265b92eaaa40892c86b19c9fc07a0f"
     },
     "remotion-maps": {
       "repo": "remotion-dev/remotion",
       "path": "packages/skills/skills/remotion-maps",
-      "commit": "973ab90b07b12c33633a9316800370eb6060d7c6"
+      "commit": "0e4c50cc93265b92eaaa40892c86b19c9fc07a0f"
     },
     "remotion-markup": {
       "repo": "remotion-dev/remotion",
       "path": "packages/skills/skills/remotion-markup",
-      "commit": "973ab90b07b12c33633a9316800370eb6060d7c6"
+      "commit": "0e4c50cc93265b92eaaa40892c86b19c9fc07a0f"
     },
     "remotion-multimedia": {
       "repo": "remotion-dev/remotion",
       "path": "packages/skills/skills/remotion-multimedia",
-      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
+      "commit": "0e4c50cc93265b92eaaa40892c86b19c9fc07a0f"
     },
     "remotion-render": {
       "repo": "remotion-dev/remotion",
       "path": "packages/skills/skills/remotion-render",
-      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
+      "commit": "0e4c50cc93265b92eaaa40892c86b19c9fc07a0f"
     },
     "remotion-saas": {
       "repo": "remotion-dev/remotion",
       "path": "packages/skills/skills/remotion-saas",
-      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
+      "commit": "0e4c50cc93265b92eaaa40892c86b19c9fc07a0f"
     },
     "remotion-studio": {
       "repo": "remotion-dev/remotion",
       "path": "packages/skills/skills/remotion-studio",
-      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
+      "commit": "0e4c50cc93265b92eaaa40892c86b19c9fc07a0f"
     },
     "remotion-upgrade": {
       "repo": "remotion-dev/remotion",
       "path": "packages/skills/skills/remotion-upgrade",
-      "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
+      "commit": "0e4c50cc93265b92eaaa40892c86b19c9fc07a0f"
     },
     "request-refactor-plan": {
       "repo": "mattpocock/skills",
@@ -330,7 +330,7 @@
     "ui-ux-pro-max": {
       "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
       "path": ".claude/skills/ui-ux-pro-max",
-      "commit": "2de1134dc4d1cfe112934611ae5803ae17a1bd7e"
+      "commit": "f823ab5fb970de820e5a0626a0786aba9aee0543"
     },
     "uv-package-manager": {
       "repo": "wshobson/agents",
@@ -340,7 +340,7 @@
     "web-design-guidelines": {
       "repo": "vercel-labs/agent-skills",
       "path": "skills/web-design-guidelines",
-      "commit": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62"
+      "commit": "5a37a6329fbad3666c3207392a6a7c0110e92efb"
     },
     "web-perf": {
       "repo": "cloudflare/skills",
