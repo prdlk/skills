@@ -4,9 +4,10 @@
 #
 # Usage: .github/scripts/sync-skills.sh [skill...]   (default: every listed skill)
 #
-# Manifest entry: "<name>": { "repo": "owner/repo", "path": "dir/in/repo", "ref": "branch-or-tag" }
-# `ref` is optional (default: the repo's default branch); `path` may be "." for
-# a repo whose root is the skill. `commit` is written by this script.
+# Manifest entry: "<name>": { "repo": "owner/repo", "path": "dir/in/repo", "ref": "branch, tag, or commit" }
+# `ref` is optional (default: the repo's default branch); a full commit SHA pins
+# a skill that upstream has since removed. `path` may be "." for a repo whose
+# root is the skill. `commit` is written by this script.
 set -euo pipefail
 
 root=$(git rev-parse --show-toplevel)
@@ -63,10 +64,10 @@ while IFS=$'\t' read -r repo ref <&3; do
 
   echo "::group::$repo${ref:+@$ref} (${names[*]})"
   dir=$(mktemp -d "$work/repo.XXXXXX")
-  clone_args=(--quiet --depth 1 --filter=blob:none --no-checkout)
-  [[ -n $ref ]] && clone_args+=(--branch "$ref")
-  if ! git clone "${clone_args[@]}" "https://github.com/$repo.git" "$dir"; then
-    echo "::error::Could not clone $repo${ref:+ at $ref}"
+  if ! git init --quiet "$dir" ||
+    ! git -C "$dir" remote add origin "https://github.com/$repo.git" ||
+    ! git -C "$dir" fetch --quiet --depth 1 --filter=blob:none origin "${ref:-HEAD}"; then
+    echo "::error::Could not fetch $repo${ref:+ at $ref}"
     failed+=("${names[@]}")
     echo "::endgroup::"
     continue
@@ -74,12 +75,12 @@ while IFS=$'\t' read -r repo ref <&3; do
 
   # Check out only the skill directories, plus whatever their symlinks point at.
   if [[ " ${paths[*]} " == *" . "* ]]; then
-    git -C "$dir" checkout --quiet
+    git -C "$dir" checkout --quiet --detach FETCH_HEAD
   else
     patterns=()
     for p in "${paths[@]}"; do patterns+=("/$p/"); done
     git -C "$dir" sparse-checkout set --no-cone "${patterns[@]}"
-    git -C "$dir" checkout --quiet
+    git -C "$dir" checkout --quiet --detach FETCH_HEAD
     for _ in 1 2 3 4 5; do
       mapfile -t extra < <(missing_link_targets "$dir" "${paths[@]}")
       ((${#extra[@]})) || break
