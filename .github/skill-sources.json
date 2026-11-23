@@ -90,6 +90,12 @@
       "path": "claude-code/skills/gum",
       "commit": "9048f07906aaccbdf69e80d3973d1e75d1eea794"
     },
+    "high-end-visual-design": {
+      "repo": "Leonxlnx/taste-skill",
+      "path": "skills/soft-skill",
+      "ref": "archive/taste-skill-v1.9",
+      "commit": "73adb37611dbaf84d996d01131ab90f711947383"
+    },
     "improve-codebase-architecture": {
       "repo": "mattpocock/skills",
       "path": "skills/engineering/improve-codebase-architecture",
@@ -99,6 +105,18 @@
       "repo": "Dammyjay93/interface-design",
       "path": ".claude/skills/interface-design",
       "commit": "2f9be3206855bcb2d1d0af262c8bae25cba6658d"
+    },
+    "laws-of-ux": {
+      "repo": "RoleModel/rolemodel-skills",
+      "path": "skills/laws-of-ux",
+      "ref": "v2026-07-17.2",
+      "commit": "230b5c8e2e5699eb0c7aa07bc8f23c8a530fd606"
+    },
+    "minimalist-ui": {
+      "repo": "Leonxlnx/taste-skill",
+      "path": "skills/minimalist-skill",
+      "ref": "archive/taste-skill-v1.9",
+      "commit": "73adb37611dbaf84d996d01131ab90f711947383"
     },
     "mise-expert": {
       "repo": "samhvw8/dot-claude",
@@ -115,15 +133,32 @@
       "path": "skills/obscura",
       "commit": "4eb123528b40c25ee015ed53b4ebdad4b9069898"
     },
+    "obsidian-vault": {
+      "repo": "mattpocock/skills",
+      "path": "skills/personal/obsidian-vault",
+      "ref": "v1.1.0",
+      "commit": "d574778f94cf620fcc8ce741584093bc650a61d3"
+    },
     "openlogs-server-logs": {
       "repo": "charlietlamb/openlogs",
       "path": "skills/openlogs-server-logs",
       "commit": "5ae124fd8cd337d7a908246d316912a6a03dc86b"
     },
+    "pr-lens": {
+      "repo": "coldteadotai/pr-lens",
+      "path": "skills/pr-lens",
+      "commit": "239644a57716e2d49b879520b627a39dc2df8a4c"
+    },
     "prototype": {
       "repo": "mattpocock/skills",
       "path": "skills/engineering/prototype",
       "commit": "5863806dd4e15c63174bee4e7515a4256792ecfa"
+    },
+    "qa": {
+      "repo": "mattpocock/skills",
+      "path": "skills/deprecated/qa",
+      "ref": "v1.1.0",
+      "commit": "d574778f94cf620fcc8ce741584093bc650a61d3"
     },
     "query": {
       "repo": "duckdb/duckdb-skills",
@@ -200,6 +235,18 @@
       "path": "packages/skills/skills/remotion-upgrade",
       "commit": "8d8b321d64592f7998c15792e4872c768d41ef3f"
     },
+    "request-refactor-plan": {
+      "repo": "mattpocock/skills",
+      "path": "skills/deprecated/request-refactor-plan",
+      "ref": "v1.1.0",
+      "commit": "d574778f94cf620fcc8ce741584093bc650a61d3"
+    },
+    "resolving-merge-conflicts": {
+      "repo": "mattpocock/skills",
+      "path": "skills/engineering/resolving-merge-conflicts",
+      "ref": "153fc1b93de6584562765cdce299324e1ff9e661",
+      "commit": "153fc1b93de6584562765cdce299324e1ff9e661"
+    },
     "rust-async-patterns": {
       "repo": "wshobson/agents",
       "path": "plugins/systems-programming/skills/rust-async-patterns",
@@ -269,6 +316,11 @@
       "repo": "mattpocock/skills",
       "path": "skills/engineering/tdd",
       "commit": "5863806dd4e15c63174bee4e7515a4256792ecfa"
+    },
+    "tldraw-offline": {
+      "repo": "NousResearch/hermes-agent",
+      "path": "optional-skills/creative/tldraw-offline",
+      "commit": "8c0fe7fe9af01ffbbdc718bc8e30e76e9a6e7316"
     },
     "typescript-expert": {
       "repo": "remix-run/remix",
