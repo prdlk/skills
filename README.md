@@ -38,9 +38,12 @@ npx skills add prdlk/skills -g -a opencode
 .agents/skills -> ../.github/skills  project discovery for Codex, opencode, omp
 .claude-plugin/marketplace.json    marketplace catalog for Claude Code, omp, Codex
 .claude-plugin/plugin.json         plugin manifest, points at .github/skills/
+commands/<cmd>.md                  plugin slash commands, invoked as /skills:<cmd>
 ```
 
 To add a skill, create `.github/skills/<name>/SKILL.md`. Its frontmatter `name` must match `<name>`.
+
+Or run `/skills:build-new-skill <name> [doc-url ...]` in omp (or `/skill:skill-builder <name> [doc-url ...]` before the plugin is upgraded). The `skill-builder` skill interviews you with `ask` forms, has its `skill-researcher` subagent read the links with Exa and distill library docs with Context7, runs a gap analysis, writes the skill, adding slash commands, subagents, custom tools, or scripts only with your approval, and links it into `~/.omp/agent/skills`, `~/.agents/skills`, and `~/.claude/skills` (subagents and tools into `~/.omp/agent/agents` and `~/.omp/agent/tools`). Skills built this way stay out of `.github/skill-sources.json`.
 
 ## Upstream sync
 
