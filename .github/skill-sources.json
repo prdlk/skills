@@ -178,12 +178,12 @@
     "remotion-best-practices": {
       "repo": "remotion-dev/remotion",
       "path": "packages/skills/skills/remotion-best-practices",
-      "commit": "c1de64d7e260e83cdaf5ff379583d7067c128d20"
+      "commit": "2f843fdad11662be81cc2e0de6114fdde6c59502"
     },
     "remotion-captions": {
       "repo": "remotion-dev/remotion",
       "path": "packages/skills/skills/remotion-captions",
-      "commit": "c1de64d7e260e83cdaf5ff379583d7067c128d20"
+      "commit": "2f843fdad11662be81cc2e0de6114fdde6c59502"
     },
     "remotion-create": {
       "repo": "remotion-dev/remotion",
@@ -208,7 +208,7 @@
     "remotion-markup": {
       "repo": "remotion-dev/remotion",
       "path": "packages/skills/skills/remotion-markup",
-      "commit": "c1de64d7e260e83cdaf5ff379583d7067c128d20"
+      "commit": "2f843fdad11662be81cc2e0de6114fdde6c59502"
     },
     "remotion-multimedia": {
       "repo": "remotion-dev/remotion",
@@ -260,7 +260,7 @@
     "rust-skills": {
       "repo": "leonardomso/rust-skills",
       "path": ".",
-      "commit": "fd2a861ab0406a4ac536a55274d14ea6fd1ca9c9"
+      "commit": "0e94a9e517cb2539bfd30694f5d785f610c27374"
     },
     "rust-testing": {
       "repo": "affaan-m/ECC",
@@ -330,7 +330,7 @@
     "ui-ux-pro-max": {
       "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
       "path": ".claude/skills/ui-ux-pro-max",
-      "commit": "8db36338810d0942567b97ce439affd1619fcf31"
+      "commit": "11ca2b3bdd555649f278ee348c32a9302b24dcf1"
     },
     "uv-package-manager": {
       "repo": "wshobson/agents",
